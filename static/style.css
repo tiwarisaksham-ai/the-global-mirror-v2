@@ -174,4 +174,47 @@ footer {
 .close-btn:hover {
   color: #000;
 }
+/* Make layout flexible on small screens */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  header, nav, footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .category-bar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .login-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
