@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #fffde7);
+    color: #111;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d47a1;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.branding h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.live {
+    background: red;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.login-btn {
+    background: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.category-bar {
+    background: #ffc107;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+.category-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.category-bar li {
+    cursor: pointer;
+    padding: 0.3rem 1rem;
+    background: #fff;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.category-bar li:hover {
+    background: #e91e63;
+    color: white;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.content h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.meta {
+    display: block;
+    font-size: 0.8rem;
+    color: gray;
+    margin-bottom: 0.5rem;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #0d47a1;
+    font-weight: bold;
+}
+
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.globe-animation {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    animation: spin 20s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

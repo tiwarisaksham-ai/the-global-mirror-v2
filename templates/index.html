@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Global Mirror</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header>
+        <div class="branding">
+            <h1>🌐 The Global Mirror BY SAKSHAM TIWARI</h1>
+            <span class="live">🔴 LIVE</span>
+        </div>
+        <div class="user-section">
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <nav class="category-bar">
+        <marquee behavior="scroll" direction="left">
+            🌍 Stay updated | 📰 Real-time Headlines | 🚀 Fast News Only On The Global Mirror!
+        </marquee>
+        <ul>
+            <li onclick="filterNews('All')">All</li>
+            <li onclick="filterNews('Top')">Top</li>
+            <li onclick="filterNews('Politics')">Politics</li>
+            <li onclick="filterNews('Sports')">Sports</li>
+            <li onclick="filterNews('Technology')">Technology</li>
+            <li onclick="filterNews('Business')">Business</li>
+            <li onclick="filterNews('Entertainment')">Entertainment</li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="news-grid">
+            {% for article in news_data %}
+            <div class="card" data-category="{{ article.category }}">
+                <img src="{{ article.image }}" alt="News Image" loading="lazy" onerror="this.onerror=null; this.src='/static/placeholder.jpg';">
+
+                <div class="content">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.description }}</p>
+                    <span class="meta">{{ article.category }} • {{ article.pubDate }}</span>
+                    <a href="{{ article.link }}" target="_blank" class="read-more">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>THE GLOBAL MIRROR - PUBLISHED BY SAKSHAM TIWARI</p>
+    </footer>
+
+    <div class="globe-animation">
+        🌐 <!-- Placeholder for animated globe -->
+    </div>
+
+    <script>
+        function filterNews(category) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                if (category === 'All' || cat === category) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
