@@ -1,23 +1,26 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff00cc, #333399, #00f0ff);
-    background-size: 400% 400%;
-    animation: gradientFlow 10s ease infinite;
-    color: #111;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  color: white; /* Ensures text stays visible */
+  font-family: 'Segoe UI', sans-serif;
 }
 
 @keyframes gradientFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
 
 
 header {
