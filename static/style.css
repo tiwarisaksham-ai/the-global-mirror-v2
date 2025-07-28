@@ -82,15 +82,21 @@ header {
 }
 
 .card {
-    background: white;
+    background: linear-gradient(135deg, #0a0f2c, #001f4d); /* Blue-black gradient */
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 8px 30px rgba(0, 64, 128, 0.4);
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 140, 255, 0.3); /* subtle glow */
 }
 
 .card:hover {
-    transform: scale(1.02);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 140, 255, 0.6);
+}
+
 }
 
 .card img {
